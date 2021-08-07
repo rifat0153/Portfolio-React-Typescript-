@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Button, Container, Grid, Typography } from '@material-ui/core';
+import * as React from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import Header from './components/Header/Header';
 
-function App() {
+export interface IAppProps {}
+
+export const App = (props: IAppProps) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <Grid>
+          <Grid item>
+            <Header />
+          </Grid>
+
+          <Grid item>
+            <Switch>
+              <Route path="/work">
+                <Typography>Work</Typography>
+              </Route>
+
+              <Route path="/about">
+                <Typography>about</Typography>
+              </Route>
+
+              <Route path="/contact">
+                <Typography>contact</Typography>
+              </Route>
+
+              <Route path="/" exact>
+                <Typography>Home</Typography>
+              </Route>
+            </Switch>
+          </Grid>
+        </Grid>
+
+        {/* A <Switch> looks through its children <Route>s and
+renders the first one that matches the current URL. */}
+        {/* <Grid style={{ height: 1000 }}></Grid> */}
+      </Router>
     </div>
   );
-}
-
-export default App;
+};
