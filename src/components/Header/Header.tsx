@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme: Theme) =>
       boxShadow: 'none',
     },
     toolbar: {
-      // height: theme.spacing(32)
+      justifyContent: 'center'
     },
     menuButton: {
       marginRight: theme.spacing(0),
@@ -37,6 +37,9 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     title: {
       flexGrow: 1,
+      [theme.breakpoints.up('sm')]: {
+        marginLeft: theme.spacing(20)
+      },
     },
     link: {
       color: 'black',
@@ -71,7 +74,8 @@ export default function MenuAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="relative" className={classes.appbar}>
+      <AppBar position="relative" className={classes.appbar} >
+
         <Toolbar className={classes.toolbar}>
           <Typography variant="h6" className={classes.title}>
             <Link to="/" className={classes.link}>
@@ -79,29 +83,26 @@ export default function MenuAppBar() {
             </Link>
           </Typography>
 
-          <IconButton className={classes.linkButton}>
-            <Typography variant="h6" className={classes.title}>
+        
+            <Typography variant="h6" className={classes.linkButton}>
               <Link to="/work" className={classes.link}>
                 Work
               </Link>
             </Typography>
-          </IconButton>
 
-          <IconButton className={classes.linkButton}>
-            <Typography variant="h6" className={classes.title}>
+          
+            <Typography variant="h6" className={classes.linkButton}>
               <Link to="/about" className={classes.link}>
                 About
               </Link>
             </Typography>
-          </IconButton>
+          
 
-          <IconButton className={classes.linkButton}>
-            <Typography variant="h6" className={classes.title}>
+            <Typography variant="h6" className={classes.linkButton}>
               <Link to="/contact" className={classes.link}>
                 Contact
               </Link>
             </Typography>
-          </IconButton>
 
           <Menu
             id="menu-appbar"
@@ -134,9 +135,7 @@ export default function MenuAppBar() {
           </IconButton>
         </Toolbar>
       </AppBar>
-      <Grid>
-        <Typography>Helloo</Typography>
-      </Grid>
+
     </div>
   );
 }
