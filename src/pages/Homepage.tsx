@@ -3,6 +3,7 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core';
 import React from 'react';
 import Description from '../components/Profile/Description';
 import { Profile } from '../components/Profile/Profile';
+import Showcase from '../components/Showcase/Showcase';
 
 interface Props {}
 
@@ -29,6 +30,7 @@ const Homepage = (props: Props) => {
     <Grid container>
       <Profile />
       <Description />
+      <Showcase />
     </Grid>
   );
 };
