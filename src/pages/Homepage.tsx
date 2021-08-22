@@ -27,11 +27,14 @@ const Homepage = (props: Props) => {
   const classes = useStyles();
 
   return (
-    <Grid container>
-      <Profile />
-      <Description />
-      <Showcase />
-    </Grid>
+    // <Grid container>
+    //   <Profile />
+    //   <Description />
+    //   <Showcase />
+    // </Grid>
+    <div>
+      Hello
+    </div>
   );
 };
 

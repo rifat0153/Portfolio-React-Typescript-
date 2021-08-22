@@ -2,6 +2,7 @@ import { Button, Container, Grid, Typography } from '@material-ui/core';
 import * as React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Header from './components/Header/Header';
+import { HomePage } from './home/HomePage';
 import Homepage from './pages/Homepage';
 
 export interface IAppProps {}
@@ -30,7 +31,8 @@ export const App = (props: IAppProps) => {
               </Route>
 
               <Route path="/" exact>
-                <Homepage />
+                {/* <Homepage /> */}
+                <HomePage />
               </Route>
             </Switch>
           </Grid>

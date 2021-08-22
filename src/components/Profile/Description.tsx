@@ -55,6 +55,9 @@ const Description = (props: Props) => {
       <Typography className={classes.name}>Mahbubur Rahman</Typography>
       <Typography className={classes.builder}>Application Builder</Typography>
       <Typography className={classes.flutter}>Flutter Developer</Typography>
+      <div className="max-w-md py-2 px-4 hover:bg-blue-400 bg-blue-600 rounded-md">
+        Hello
+      </div>
     </Grid>
   );
 };
