@@ -3,8 +3,6 @@ import * as React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Header from './components/Header/Header';
 import { HomePage } from './home/HomePage';
-import Homepage from './pages/Homepage';
-
 export interface IAppProps {}
 
 export const App = (props: IAppProps) => {
@@ -38,9 +36,7 @@ export const App = (props: IAppProps) => {
           </Grid>
         </Grid>
 
-        {/* A <Switch> looks through its children <Route>s and
-renders the first one that matches the current URL. */}
-        {/* <Grid style={{ height: 1000 }}></Grid> */}
+   
       </Router>
     </div>
   );
