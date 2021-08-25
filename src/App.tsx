@@ -1,16 +1,17 @@
 import { Button, Container, Grid, Typography } from '@material-ui/core';
 import * as React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import Header from './components/Header/Header';
+import Header from './home/Header';
 import { HomePage } from './home/HomePage';
 export interface IAppProps {}
 
 export const App = (props: IAppProps) => {
   return (
-    <div>
+    <div className="font-sans font-normal">
       <Router>
         <Grid>
           <Grid item>
+            {/* <Header /> */}
             <Header />
           </Grid>
 
