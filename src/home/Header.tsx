@@ -1,6 +1,7 @@
-import React, { ReactElement, useState } from 'react';
-import { useEffect } from 'react';
+import React, { ReactElement, useState, useEffect } from 'react';
 import { List } from 'react-bootstrap-icons';
+import { Transition, animated } from 'react-spring';
+import useComponentVisible from './../hooks/UseComponentVisible';
 
 interface Props {}
 
@@ -18,38 +19,49 @@ export default function Header({}: Props): ReactElement {
 }
 
 const MobileHeader = () => {
-  const [isOpen, setisOpen] = useState(false);
-
-  const toggle = () => {
-    setisOpen(!isOpen);
-  };
+  const [show, set] = useState(false);
+  const { ref, isComponentVisible, setIsComponentVisible } =
+    useComponentVisible(true);
 
   return (
     <div className="bg-indigo-dark text-white">
       {/* Always open Row with Menu Button */}
       <div
-        className="flex items-center h-50 justify-end px-8 pt-2"
-        onClick={toggle}
+        className="flex items-center h-50 justify-end px-8 py-2"
+        onClick={() => {
+          set(!show)
+          setIsComponentVisible(!isComponentVisible)
+        } }
       >
         <List className="block" size={40} />
       </div>
       {/* menu list */}
-      {isOpen ? (
-        <div
-          className={`flex-col transition  duration-1000 
-        ease-in-out ${
-          isOpen ? 'fadeIn' : 'fadeOut'
-        }  items-center justify-end text-right px-7 pt-2 pb-4 space-y-3`}
+
+      <div ref={ref} className="bg">
+        <Transition
+          items={isComponentVisible && show}
+          from={{ opacity: 0, marginRight: 500 }}
+          enter={{ opacity: 1, marginRight: 0 }}
+          leave={{  }}
+          config={{ duration: 300 }}
+
         >
-          <div className="text-lg px-2">About</div>
-          <div className="text-lg px-2">Experience</div>
-          <div className=" text-lg px-2">Work</div>
-          <div className=" text-lg px-2">Contact</div>
-        </div>
-      ) : (
-        <div>
-        </div>
-      )}
+          {(styles, item) =>
+            item && (
+              <animated.div style={styles}>
+                <div
+                  className={`flex-col  items-center justify-end text-right px-7 pt-2 pb-4 space-y-3`}
+                >
+                  <div className="text-lg px-2">About</div>
+                  <div className="text-lg px-2">Experience</div>
+                  <div className=" text-lg px-2">Work</div>
+                  <div className=" text-lg px-2">Contact</div>
+                </div>
+              </animated.div>
+            )
+          }
+        </Transition>
+      </div>
     </div>
   );
 };

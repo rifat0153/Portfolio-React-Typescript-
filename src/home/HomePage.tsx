@@ -6,7 +6,7 @@ import { useAppSelector } from '../store/hooks';
 
 interface Props {}
 
-export const HomePage = (props: Props) => {
+ const HomePage = (props: Props) => {
 
   const counter = useAppSelector(selectCount)
   const dispatch = useDispatch()
@@ -49,3 +49,5 @@ export const HomePage = (props: Props) => {
     </div>
   );
 };
+
+export default HomePage
