@@ -6,16 +6,14 @@ import { useAppSelector } from '../store/hooks';
 
 interface Props {}
 
- const HomePage = (props: Props) => {
-
-  const counter = useAppSelector(selectCount)
-  const dispatch = useDispatch()
-
+const HomePage = (props: Props) => {
+  const counter = useAppSelector(selectCount);
+  const dispatch = useDispatch();
 
   return (
-    <div className="w-screen bg-gray-100 p-2">
+    <div className=" bg-indigo-dark p-2 text-gray-100">
       <img
-        className="w-36 h-36 mt-8 shadow-lg mx-auto rounded-full object-cover"
+        className="w-44 h-44 mt-8 shadow-lg mx-auto rounded-full object-cover"
         src={profileImg}
         alt="a"
       />
@@ -31,23 +29,13 @@ interface Props {}
       </p>
 
       <div className="flex justify-center items-center">
-        
-        <p className="text-6xl text-center">
-        {counter}
+        <p className="text-6xl text-center">{counter}</p>
 
-        </p>
-
-        <div onClick= {() => dispatch(increment(2))  } >
-          Add random
-        </div>
-        <div onClick= {() => dispatch(decrement(2) )}>
-          Decrease Random
-        </div>
-
+        <div onClick={() => dispatch(increment(2))}>Add random</div>
+        <div onClick={() => dispatch(decrement(2))}>Decrease Random</div>
       </div>
-
     </div>
   );
 };
 
-export default HomePage
+export default HomePage;
