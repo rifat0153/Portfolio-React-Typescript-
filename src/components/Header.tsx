@@ -1,5 +1,5 @@
 import React, { ReactElement, useState, useEffect } from 'react';
-import { List, Linkedin, Github, Instagram } from 'react-bootstrap-icons';
+import { List, Linkedin, Github, Instagram, XLg } from 'react-bootstrap-icons';
 import { Transition, animated } from 'react-spring';
 import useComponentVisible from '../hooks/UseComponentVisible';
 
@@ -13,7 +13,7 @@ export default function Header(): ReactElement {
     });
   }, []);
 
-  return <div>{width >= 640 ? <DesktopHeader /> : <MobileHeader />}</div>;
+  return <div>{width >= 800 ? <DesktopHeader /> : <MobileHeader />}</div>;
 }
 
 const MobileHeader = () => {
@@ -31,28 +31,46 @@ const MobileHeader = () => {
           setIsComponentVisible(!isComponentVisible);
         }}
       >
-        <List className="block" size={40} />
+        <Transition
+          items={isComponentVisible && show}
+          from={{ opacity: 0 }}
+          enter={{ opacity: 1 }}
+          leave={{ opacity: 0 }}
+          config={{ duration: 200 }}
+        >
+          {({ opacity }, styles, item) =>
+            show && isComponentVisible ? (
+              <animated.div style={{}}>
+                <XLg className="w-8 h-8" />
+              </animated.div>
+            ) : (
+              <animated.div style={{}}>
+                <List className="w-8 h-8" />
+              </animated.div>
+            )
+          }
+        </Transition>
       </div>
       {/* menu list */}
 
       <div ref={ref} className="bg">
         <Transition
           items={isComponentVisible && show}
-          from={{ opacity: 0, marginRight: 500 }}
+          from={{ opacity: 0, marginRight: 300 }}
           enter={{ opacity: 1, marginRight: 0 }}
           leave={{}}
-          config={{ duration: 300 }}
+          config={{ duration: 200 }}
         >
           {(styles, item) =>
             item && (
               <animated.div style={styles}>
                 <div
-                  className={`flex-col  items-center justify-end text-right px-7 pt-2 pb-4 space-y-3`}
+                  className={`flex-col text-right min-h-screen min-w-screen px-7 pt-2 pb-4 space-y-3`}
                 >
-                  <div className="text-lg px-2">Projects</div>
-                  <div className="text-lg px-2">Technologies</div>
-                  <div className=" text-lg px-2">About</div>
-                  <div className="flex justify-around items-center py-4">
+                  <div className="block  text-lg px-2">Projects</div>
+                  <div className="block   text-lg px-2">Technologies</div>
+                  <div className="block    text-lg px-2">About</div>
+                  <div className="  flex justify-end items-center px-2 py-4 space-x-12">
                     <Github className=" h-5 w-5" />
                     <Linkedin className=" h-5 w-5" />
                     <Instagram className=" h-5 w-5" />

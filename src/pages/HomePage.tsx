@@ -1,5 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import Project from '../components/Project';
+import appData, { AppInfo } from '../data/AppData';
 import { decrement, increment, selectCount } from '../slices/counterSlice';
 import profileImg from '../static/images/profile.jpg';
 import { useAppSelector } from '../store/hooks';
@@ -7,6 +9,8 @@ import { useAppSelector } from '../store/hooks';
 interface Props {}
 
 const HomePage = (props: Props) => {
+  const data: AppInfo[] = appData;
+
   const counter = useAppSelector(selectCount);
   const dispatch = useDispatch();
 
@@ -33,6 +37,10 @@ const HomePage = (props: Props) => {
 
         <div onClick={() => dispatch(increment(2))}>Add random</div>
         <div onClick={() => dispatch(decrement(2))}>Decrease Random</div>
+      </div>
+
+      <div>
+        <Project appInfoList= {data} />
       </div>
     </div>
   );
