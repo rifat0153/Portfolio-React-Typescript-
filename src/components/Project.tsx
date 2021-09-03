@@ -7,7 +7,7 @@ interface Props {
 
 const Project = ({ appInfoList }: Props): JSX.Element => {
   return (
-    <div className="max-w-7xl bg-red-600  m-auto">
+    <div className="max-w-7xl bg-indigo-900  m-auto">
       Project Showcase
       {appInfoList.map((item: AppInfo) => (
         <div key={item.id}>
