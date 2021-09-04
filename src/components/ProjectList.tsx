@@ -5,12 +5,12 @@ interface Props {
   appInfoList: AppInfo[];
 }
 
-const Project = ({ appInfoList }: Props): JSX.Element => {
+const ProjectList = ({ appInfoList }: Props): JSX.Element => {
   return (
     <div className="max-w-7xl   mx-auto">
       Project Showcase
       {appInfoList.map((item: AppInfo) => (
-        <div key={item.id} className="mt-8 sm:mt-16">
+        <div key={item.id} className="my-16 sm:mt-32 sm:mb-48">
           {item.id % 2 === 0 ? (
             <ProjectDetail appInfo={item} switchSide={true} />
           ) : (
@@ -22,4 +22,4 @@ const Project = ({ appInfoList }: Props): JSX.Element => {
   );
 };
 
-export default Project;
+export default ProjectList;

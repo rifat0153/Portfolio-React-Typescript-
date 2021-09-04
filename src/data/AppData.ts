@@ -15,7 +15,7 @@ const appData : AppInfo [] = [
         image2: 'https://firebasestorage.googleapis.com/v0/b/portfolio-6b79f.appspot.com/o/app1_2.png?alt=media&token=ebf4b599-860c-4fe2-85f0-199b97a132e9',
         title: 'Aalokito',
         introduction: 'An android application for sharing meal and other necessary things',
-        technology: 'Aalokiot is build with Flutter, Node, MongoDB with geo-location based system. Firebase for realtime in app notifications. FCM acts as the node runtime in cloud and handles the api call from Flutter app.' 
+        technology: 'Aalokito is build with Flutter, Nodejs and MongoDB with geo-location based system. Firebase for realtime in app notifications. Cloud funtions hosts the node express server and handles the api call from Flutter app.' 
     },
     {
         id: 2,

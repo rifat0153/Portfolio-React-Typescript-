@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import Project from '../components/Project';
+import ProjectList from '../components/ProjectList';
 import appData, { AppInfo } from '../data/AppData';
 import { decrement, increment, selectCount } from '../slices/counterSlice';
 import profileImg from '../static/images/profile.jpg';
@@ -17,7 +17,7 @@ const HomePage = (props: Props) => {
   return (
     <div className=" bg-indigo-dark p-2 text-gray-100">
       <img
-        className="w-44 h-44 mt-8 shadow-lg mx-auto rounded-full object-cover"
+        className="w-44 h-44 mt-8 shadow-lg mx-auto rounded-full object-cover object-top"
         src={profileImg}
         alt="a"
       />
@@ -40,7 +40,7 @@ const HomePage = (props: Props) => {
       </div>
 
       <div>
-        <Project appInfoList= {data} />
+        <ProjectList appInfoList= {data} />
       </div>
     </div>
   );
