@@ -25,7 +25,7 @@ const MobileHeader = () => {
     <div className={'bg-indigo-dark  text-white'}>
       {/* Always open Row with Menu Button */}
       <div
-        className="flex items-center h-50 justify-end px-8 py-2"
+        className="flex items-center h-50 px-8 py-2"
         onClick={() => {
           set(!show);
           setIsComponentVisible(!isComponentVisible);
@@ -41,11 +41,16 @@ const MobileHeader = () => {
           {({ opacity }, styles, item) =>
             show && isComponentVisible ? (
               <animated.div style={{}}>
-                <XLg className="w-8 h-8" />
+                <div className="flex -mx-8 px-8 justify-end  w-screen">
+                  <XLg className="w-8 h-8" />
+                </div>
               </animated.div>
             ) : (
               <animated.div style={{}}>
-                <List className="w-8 h-8" />
+                <div className="flex -mx-8 px-8 justify-between  w-screen">
+                  <p className="font-mono text-2xl">Mahbubur</p>
+                  <List className="w-8 h-8 " />
+                </div>
               </animated.div>
             )
           }
@@ -53,7 +58,7 @@ const MobileHeader = () => {
       </div>
       {/* menu list */}
 
-      <div ref={ref} className="bg">
+      <div ref={ref} className="flex justify-end ">
         <Transition
           items={isComponentVisible && show}
           from={{ opacity: 0, marginRight: 300 }}
@@ -65,7 +70,7 @@ const MobileHeader = () => {
             item && (
               <animated.div style={styles}>
                 <div
-                  className={`flex-col text-right min-h-screen min-w-screen px-7 pt-2 pb-4 space-y-3`}
+                  className={`flex-col text-right  min-w-screen px-7 pt-2 pb-4 space-y-3`}
                 >
                   <div className="block  text-lg px-2">Projects</div>
                   <div className="block   text-lg px-2">Technologies</div>
@@ -90,18 +95,28 @@ const DesktopHeader = () => {
     <div className=" min-w-full   bg-indigo-dark">
       <div className="flex h-20  mx-auto justify-between max-w-7xl items-center  text-gray-300">
         {/* LEFT */}
-        <div className="text-4xl font-semibold">Portfolio</div>
+        <div className="text-4xl font-semibold hover:underline">Mahbubur</div>
+
         {/* Middle */}
-        <div className="flex items-center text-gray-300 text-2xl font-semibold space-x-8">
-          <p className=" text-headerNumber"> </p> Projects
-          <p className=" text-headerNumber"> </p> Technologies
-          <p className=" text-headerNumber"> </p> About
+        <div className="flex items-center text-gray-300 text-2xl font-semibold space-x-16">
+          <p className=" hover:text-headerNumber transform ease-in-out hover:scale-125 duration-300 hover:underline">
+            Projects{' '}
+          </p>
+
+          <p className=" hover:text-headerNumber transform ease-in-out hover:scale-125 duration-300 hover:underline">
+            Technologies
+          </p>
+
+          <p className=" hover:text-headerNumber transform ease-in-out hover:scale-125 duration-300 hover:underline">
+            About{' '}
+          </p>
         </div>
+
         {/* Right */}
         <div className="flex items-center space-x-12">
-          <Github className=" h-6 w-6" />
-          <Linkedin className=" h-6 w-6" />
-          <Instagram className=" h-6 w-6" />
+          <Github className=" h-6 w-6 transform hover:scale-125 transition ease-in-out duration-300" />
+          <Linkedin className=" h-6 w-6 transform hover:scale-125 transition ease-in-out duration-300" />
+          <Instagram className=" h-6 w-6 transform hover:scale-125 transition ease-in-out duration-300" />
         </div>
       </div>
     </div>

@@ -18,7 +18,11 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      hover: ['group-hover'],
+      text: ['group-hover'],
+      scale: ['group-hover'],
+    },
   },
   plugins: [],
 };
