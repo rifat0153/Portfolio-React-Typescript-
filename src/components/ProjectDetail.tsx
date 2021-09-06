@@ -65,13 +65,13 @@ const ShowImages = ({ appInfo }: { appInfo: AppInfo }) => {
 const Description = ({ appInfo }: { appInfo: AppInfo }) => {
   return (
     <div className="">
-      <p className=" font-bold   text-3xl sm:text-4xl text-headerNumber">
+      <p className=" font-bold   text-3xl sm:text-4xl text-appText">
         {appInfo.title}
       </p>
       <p className="mt-4 text-gray-400 font-semibold  text-lg sm:text-xl">
         {appInfo.introduction}
       </p>
-      <p className="mt-8 text-3xl sm:text-4xl text-headerNumber">Technology</p>
+      <p className="mt-8 text-3xl sm:text-4xl text-appText">Technology</p>
       <p className="mt-4 text-lg  sm:text-xl text-gray-400">
         {appInfo.technology}
       </p>

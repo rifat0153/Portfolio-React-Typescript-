@@ -15,7 +15,7 @@ const HomePage = (props: Props) => {
   const dispatch = useDispatch();
 
   return (
-    <div className=" bg-indigo-dark p-2 text-gray-100">
+    <div className=" bg-main-dark p-2 text-gray-100">
       <img
         className="w-44 h-44 mt-8 shadow-lg mx-auto rounded-full object-cover object-top"
         src={profileImg}
@@ -40,7 +40,7 @@ const HomePage = (props: Props) => {
       </div>
 
       <div>
-        <ProjectList appInfoList= {data} />
+        <ProjectList appInfoList={data} />
       </div>
     </div>
   );

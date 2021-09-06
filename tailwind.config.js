@@ -8,12 +8,13 @@ module.exports = {
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
-        indigo: {
-          light: '#b3bcf5',
+        main: {
+          light: '#011D32',
           DEFAULT: '#5c6ac4',
-          dark: '#192938',
+          dark: '#011627',
         },
-        headerNumber: '#5eb5a8',
+        header: '#011D32',
+        appText: '#C792EA',
       },
     },
   },

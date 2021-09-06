@@ -13,7 +13,12 @@ export default function Header(): ReactElement {
     });
   }, []);
 
-  return <div>{width >= 800 ? <DesktopHeader /> : <MobileHeader />}</div>;
+  // return <div>{width >= 800 ? <DesktopHeader /> : <MobileHeader />}</div>;
+  return (
+    <div>
+      <DesktopHeader />{' '}
+    </div>
+  );
 }
 
 const MobileHeader = () => {
@@ -22,7 +27,7 @@ const MobileHeader = () => {
     useComponentVisible(show);
 
   return (
-    <div className={'bg-indigo-dark  text-white'}>
+    <div className={'bg-main-dark  text-white'}>
       {/* Always open Row with Menu Button */}
       <div
         className="flex items-center h-50 px-8 py-2"
@@ -92,31 +97,55 @@ const MobileHeader = () => {
 
 const DesktopHeader = () => {
   return (
-    <div className=" min-w-full   bg-indigo-dark">
-      <div className="flex h-20  mx-auto justify-between max-w-7xl items-center  text-gray-300">
-        {/* LEFT */}
-        <div className="text-4xl font-semibold hover:underline">Mahbubur</div>
+    <div className="bg-main-dark ">
+      <div className=" min-w-full py-10   opacity-70">
+        <div className="fixed inset-x-0 top-0 bg-header  ">
+          {/* Desktop Nav goes here */}
 
-        {/* Middle */}
-        <div className="flex items-center text-gray-300 text-2xl font-semibold space-x-16">
-          <p className=" hover:text-headerNumber transform ease-in-out hover:scale-125 duration-300 hover:underline">
-            Projects{' '}
-          </p>
+          <nav className="hidden lg:flex p-4 z-30  mx-auto justify-between items-center max-w-7xl text-gray-300">
+            {/* LEFT */}
 
-          <p className=" hover:text-headerNumber transform ease-in-out hover:scale-125 duration-300 hover:underline">
-            Technologies
-          </p>
+            <div className="text-4xl font-semibold ">Mahbubur</div>
 
-          <p className=" hover:text-headerNumber transform ease-in-out hover:scale-125 duration-300 hover:underline">
-            About{' '}
-          </p>
-        </div>
+            {/* Middle */}
 
-        {/* Right */}
-        <div className="flex items-center space-x-12">
-          <Github className=" h-6 w-6 transform hover:scale-125 transition ease-in-out duration-300" />
-          <Linkedin className=" h-6 w-6 transform hover:scale-125 transition ease-in-out duration-300" />
-          <Instagram className=" h-6 w-6 transform hover:scale-125 transition ease-in-out duration-300" />
+            <div className="flex items-center text-gray-300 text-2xl font-semibold space-x-16">
+              <a
+                href="*"
+                className=" hover:text-appText transform ease-in-out hover:scale-125 duration-300 "
+              >
+                Projects{' '}
+              </a>
+
+              <a
+                href="*"
+                className=" hover:text-appText transform ease-in-out hover:scale-125 duration-300 "
+              >
+                Technologies
+              </a>
+
+              <a
+                href="*"
+                className=" hover:text-appText transform ease-in-out hover:scale-125 duration-300 "
+              >
+                About{' '}
+              </a>
+            </div>
+
+            {/* Right */}
+
+            <div className="flex items-center space-x-12">
+              <Github className=" h-6 w-6 transform hover:scale-125 transition ease-in-out duration-300" />
+              <Linkedin className=" h-6 w-6 transform hover:scale-125 transition ease-in-out duration-300" />
+              <Instagram className=" h-6 w-6 transform hover:scale-125 transition ease-in-out duration-300" />
+            </div>
+          </nav>
+
+          {/* Mobile Nav goes here */}
+
+          <nav className="flex lg:hidden">
+            <div>Mobile Nav</div>
+          </nav>
         </div>
       </div>
     </div>

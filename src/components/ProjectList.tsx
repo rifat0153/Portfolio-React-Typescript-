@@ -12,9 +12,13 @@ const ProjectList = ({ appInfoList }: Props): JSX.Element => {
       {appInfoList.map((item: AppInfo) => (
         <div key={item.id} className="my-16 sm:mt-32 sm:mb-48">
           {item.id % 2 === 0 ? (
-            <ProjectDetail appInfo={item} switchSide={true} />
+            <div className="">
+              <ProjectDetail appInfo={item} switchSide={true} />
+            </div>
           ) : (
-            <ProjectDetail appInfo={item} switchSide={false} />
+            <div className="bg-main-light">
+              <ProjectDetail appInfo={item} switchSide={false} />
+            </div>
           )}
         </div>
       ))}
