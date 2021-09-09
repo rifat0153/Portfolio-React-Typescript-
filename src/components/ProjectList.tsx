@@ -7,17 +7,21 @@ interface Props {
 
 const ProjectList = ({ appInfoList }: Props): JSX.Element => {
   return (
-    <div className="max-w-7xl   mx-auto">
+    <div className="">
       Project Showcase
       {appInfoList.map((item: AppInfo) => (
-        <div key={item.id} className="my-16 sm:mt-32 sm:mb-48">
+        <div key={item.id} className="">
           {item.id % 2 === 0 ? (
-            <div className="">
-              <ProjectDetail appInfo={item} switchSide={true} />
+            <div>
+              <div className="max-w-7xl   mx-auto">
+                <ProjectDetail appInfo={item} switchSide={true} />
+              </div>
             </div>
           ) : (
-            <div className="bg-main-light">
-              <ProjectDetail appInfo={item} switchSide={false} />
+            <div className="bg-main-light ">
+              <div className="max-w-7xl   mx-auto ">
+                <ProjectDetail appInfo={item} switchSide={false} />
+              </div>
             </div>
           )}
         </div>

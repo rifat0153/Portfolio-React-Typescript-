@@ -96,9 +96,15 @@ const MobileHeader = () => {
 };
 
 const DesktopHeader = () => {
+  const [open, setopen] = useState(false);
+
+  const toggleMenu = () => {
+    setopen(!open);
+  };
+
   return (
     <div className="bg-main-dark ">
-      <div className=" min-w-full py-10   opacity-70">
+      <div className={`min-w-full  ${open ? `py-32` : `py-10`}   opacity-70`}>
         <div className="fixed inset-x-0 top-0 bg-header  ">
           {/* Desktop Nav goes here */}
 
@@ -143,9 +149,34 @@ const DesktopHeader = () => {
 
           {/* Mobile Nav goes here */}
 
-          <nav className="flex lg:hidden">
-            <div>Mobile Nav</div>
+          <nav className="flex lg:hidden justify-end">
+            <button className="p-8" onClick={toggleMenu}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 "
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="white"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
           </nav>
+          <div
+            id="mobile"
+            className={` ${
+              open ? 'flex-col items-end' : 'hidden'
+            } bg-gray-600 h-32 w-full p-4 space-y-2 text-gray-100 text-xl font-sans`}
+          >
+            <p className="">Projects</p>
+            <p className=""> Technologies</p>
+            <p className="">About</p>
+          </div>
         </div>
       </div>
     </div>

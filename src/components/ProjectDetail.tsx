@@ -11,8 +11,8 @@ const ProjectDetail = ({ appInfo, switchSide }: Props) => {
 
   return (
     <div>
-      {/* APPINFO DIV */}
-      <div className="grid md:grid-cols-2">
+      {/* APPINFO GRID */}
+      <main className="grid md:grid-cols-2">
         {/* Image DIV */}
         <div
           className={`${switchSide ? 'hidden' : ''} grid grid-cols-2 space-x-2`}
@@ -28,11 +28,11 @@ const ProjectDetail = ({ appInfo, switchSide }: Props) => {
         <div className={`${switchSide ? '' : 'hidden'}  grid grid-cols-2`}>
           <ShowImages appInfo={appInfo} />
         </div>
-      </div>
+      </main>
 
       {/* DIVIDER DIV */}
       <div className="flex justify-center w-full">
-        <hr className="mt-16 sm:mt-48 mx-16  border-1 w-full   border-gray-700" />
+        <hr className="my-16 mx-16  border-1 w-full   border-gray-700" />
       </div>
     </div>
   );
