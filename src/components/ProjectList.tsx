@@ -8,7 +8,6 @@ interface Props {
 const ProjectList = ({ appInfoList }: Props): JSX.Element => {
   return (
     <div className="">
-      Project Showcase
       {appInfoList.map((item: AppInfo) => (
         <div key={item.id} className="">
           {item.id % 2 === 0 ? (

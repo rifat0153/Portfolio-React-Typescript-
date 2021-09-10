@@ -10,9 +10,9 @@ const ProjectDetail = ({ appInfo, switchSide }: Props) => {
   console.log(switchSide);
 
   return (
-    <div>
+    <div className="pt-16">
       {/* APPINFO GRID */}
-      <main className="grid md:grid-cols-2">
+      <div className="grid md:grid-cols-2">
         {/* Image DIV */}
         <div
           className={`${switchSide ? 'hidden' : ''} grid grid-cols-2 space-x-2`}
@@ -24,13 +24,30 @@ const ProjectDetail = ({ appInfo, switchSide }: Props) => {
         <div className="px-2 py-4 text-gray-300 font-mono">
           <Description appInfo={appInfo} />
         </div>
+
         {/* Image DIV For Side Switch */}
-        <div className={`${switchSide ? '' : 'hidden'}  grid grid-cols-2`}>
+        <div
+          className={`${
+            switchSide ? '' : 'hidden'
+          }  grid grid-cols-2 space-x-2`}
+        >
           <ShowImages appInfo={appInfo} />
         </div>
-      </main>
+      </div>
+
+      {/* Technogloy LIST */}
+      <div className="mt-16">
+        <div className="flex flex-wrap justify-center mx-auto max-w-xl  divide-x divide-gray-300 text-lg sm:text-2xl font-bold  text-transparent  bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+          {appInfo.technologyList.map((item, index) => (
+            <div className="px-2 my-2">
+              <p key={index}>{item} </p>
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* DIVIDER DIV */}
+
       <div className="flex justify-center w-full">
         <hr className="my-16 mx-16  border-1 w-full   border-gray-700" />
       </div>
@@ -43,7 +60,7 @@ export default ProjectDetail;
 const ShowImages = ({ appInfo }: { appInfo: AppInfo }) => {
   return (
     <>
-      <div className=" mx-auto pl-2 py-4">
+      <div className=" mx-auto  py-4">
         <img
           className="w-screen md:w-48 border-2 border-gray-400 object-cover object-center   h-full  my-2 rounded-2xl"
           src={appInfo.image1}
@@ -51,7 +68,7 @@ const ShowImages = ({ appInfo }: { appInfo: AppInfo }) => {
         />
       </div>
 
-      <div className="mx-auto pr-2 py-4 ">
+      <div className="mx-auto  py-4 ">
         <img
           className="w-screen md:w-48 border-2 border-gray-400 object-cover object-center   h-full  my-2 rounded-2xl"
           src={appInfo.image2}

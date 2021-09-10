@@ -17,7 +17,7 @@ const DesktopHeader = () => {
     from: { position: 'absolute', opacity: 0 },
     enter: { opacity: 1 },
     leave: { opacity: 0 },
-    delay: 200,
+    delay: 100,
     config: config.wobbly,
   });
 
@@ -68,8 +68,8 @@ const DesktopHeader = () => {
 
           {/* Mobile Nav goes here */}
 
-          <nav className="flex z-50 lg:hidden justify-end">
-            <button onClick={toggleMenu} className="h-8 w-8 mr-4 inline-block">
+          <nav className="flex z-50 lg:hidden h-12 justify-end items-center">
+            <button onClick={toggleMenu} className="h-8 w-8 m-4 inline-flex">
               {transitions(({ opacity }, item) =>
                 item ? (
                   <animated.div
@@ -130,7 +130,7 @@ const DesktopHeader = () => {
             id="mobile"
             className={` ${
               open ? 'flex-col items-end' : 'hidden'
-            }  h-32 w-full p-4 mt-12 space-y-2 text-gray-100 text-xl font-sans`}
+            }  h-32 w-full p-4  space-y-2 text-gray-100 text-xl font-sans`}
           >
             <p className="">Projects</p>
             <p className=""> Technologies</p>

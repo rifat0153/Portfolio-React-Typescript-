@@ -1,16 +1,49 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import ProjectList from '../components/ProjectList';
-import appData, { AppInfo } from '../data/AppData';
+import {
+  selectCurrentProject,
+  selectProjectList,
+  setCurrentTech,
+  setCurrentIndex,
+} from '../slices/projectSlice';
 import profileImg from '../static/images/profile.jpg';
 
 interface Props {}
 
 const HomePage = (props: Props) => {
-  const data: AppInfo[] = appData;
+  const data = useSelector(selectProjectList);
+  const selected = useSelector(selectCurrentProject);
+
+  const dispatch = useDispatch();
 
   return (
-    <div className=" bg-main-dark p-2 text-gray-100">
-      <Profile />
+    <div className=" bg-main-dark p-2 text-gray-200">
+      <div>
+        <input
+          className="text-black mx-24"
+          type="text"
+          onChange={(e) => {
+            console.log(e.target.value);
+            dispatch(setCurrentTech(e.target.value));
+          }}
+        />
+        <input
+          className="text-black"
+          type="text"
+          onChange={(e) => {
+            console.log(e.target.value);
+            dispatch(setCurrentIndex(parseInt(e.target.value)));
+          }}
+        />
+      </div>
+      {selected.technologyList.map((item) => (
+        <p>{item}</p>
+      ))}
+      <div></div>
+      <div className="my-16">
+        <Profile />
+      </div>
       <div>
         <ProjectList appInfoList={data} />
       </div>
