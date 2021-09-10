@@ -68,7 +68,7 @@ const DesktopHeader = () => {
 
           {/* Mobile Nav goes here */}
 
-          <nav className="flex lg:hidden justify-end">
+          <nav className="flex z-50 lg:hidden justify-end">
             <button onClick={toggleMenu} className="h-8 w-8 mr-4 inline-block">
               {transitions(({ opacity }, item) =>
                 item ? (
@@ -130,7 +130,7 @@ const DesktopHeader = () => {
             id="mobile"
             className={` ${
               open ? 'flex-col items-end' : 'hidden'
-            } bg-gray-600 h-32 w-full p-4 mt-12 space-y-2 text-gray-100 text-xl font-sans`}
+            }  h-32 w-full p-4 mt-12 space-y-2 text-gray-100 text-xl font-sans`}
           >
             <p className="">Projects</p>
             <p className=""> Technologies</p>

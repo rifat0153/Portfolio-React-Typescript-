@@ -43,7 +43,7 @@ export default ProjectDetail;
 const ShowImages = ({ appInfo }: { appInfo: AppInfo }) => {
   return (
     <>
-      <div className="relative mx-auto pl-2 py-4">
+      <div className=" mx-auto pl-2 py-4">
         <img
           className="w-screen md:w-48 border-2 border-gray-400 object-cover object-center   h-full  my-2 rounded-2xl"
           src={appInfo.image1}
