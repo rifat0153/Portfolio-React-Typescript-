@@ -1,9 +1,8 @@
-import * as React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/Header';
-import { About } from './pages/About';
+import { AboutPage } from './pages/AboutPage';
 import HomePage from './pages/HomePage';
-import { Technology } from './pages/Technology';
+import { TechnologyPage } from './pages/TechnologyPage';
 export interface IAppProps {}
 
 export const App = (props: IAppProps) => {
@@ -20,10 +19,10 @@ export const App = (props: IAppProps) => {
               <HomePage />
             </Route>
             <Route exact path="/tech">
-              <Technology />
+              <TechnologyPage />
             </Route>
             <Route exact path="/about">
-              <About />
+              <AboutPage />
             </Route>
           </Switch>
         </div>
