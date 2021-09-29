@@ -1,5 +1,6 @@
 import React, { ReactElement, useState } from 'react';
 import { Linkedin, Github, Instagram } from 'react-bootstrap-icons';
+import { Link, Redirect } from 'react-router-dom';
 import { animated, useTransition, config } from 'react-spring';
 
 export default function Header(): ReactElement {
@@ -21,6 +22,11 @@ const DesktopHeader = () => {
     config: config.wobbly,
   });
 
+  const openInNewTab = (url: string) => {
+    const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+    if (newWindow) newWindow.opener = null;
+  };
+
   return (
     <div className="bg-main-dark ">
       <div className={`min-w-full  ${open ? `py-32` : `py-10`}   opacity-70`}>
@@ -35,34 +41,51 @@ const DesktopHeader = () => {
             {/* Middle */}
 
             <div className="flex items-center text-gray-300 text-2xl font-semibold space-x-16">
-              <a
-                href="*"
+              <Link
+                to="/"
                 className=" hover:text-appText transform ease-in-out hover:scale-125 duration-300 "
               >
-                Projects{' '}
-              </a>
+                Projects
+              </Link>
 
-              <a
-                href="*"
+              <Link
+                to="/tech"
                 className=" hover:text-appText transform ease-in-out hover:scale-125 duration-300 "
               >
                 Technologies
-              </a>
+              </Link>
 
-              <a
-                href="*"
+              <Link
+                to="/about"
                 className=" hover:text-appText transform ease-in-out hover:scale-125 duration-300 "
               >
-                About{' '}
-              </a>
+                About
+              </Link>
             </div>
 
             {/* Right */}
 
             <div className="flex items-center space-x-12">
-              <Github className=" h-6 w-6 transform hover:scale-125 transition ease-in-out duration-300" />
-              <Linkedin className=" h-6 w-6 transform hover:scale-125 transition ease-in-out duration-300" />
-              <Instagram className=" h-6 w-6 transform hover:scale-125 transition ease-in-out duration-300" />
+              <Github
+                onClick={() =>
+                  openInNewTab('https://github.com/rifat0153?tab=repositories')
+                }
+                className=" h-6 w-6 transform hover:scale-125 transition ease-in-out duration-300"
+              />{' '}
+              <Linkedin
+                onClick={() =>
+                  openInNewTab(
+                    'https://www.linkedin.com/in/mahbubur-rahman-988508172/'
+                  )
+                }
+                className=" h-6 w-6 transform hover:scale-125 transition ease-in-out duration-300"
+              />
+              <Instagram
+                onClick={() =>
+                  openInNewTab('https://www.instagram.com/mahbuburrifat/')
+                }
+                className=" h-6 w-6 transform hover:scale-125 transition ease-in-out duration-300"
+              />
             </div>
           </nav>
 

@@ -27,7 +27,7 @@ const appData: AppInfo[] = [
       'NodeJs',
       'Flutter',
       'Firebase',
-      'MongoDB',
+      'Kotlin',
       'NodeJs',
     ],
   },
