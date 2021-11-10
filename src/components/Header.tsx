@@ -155,9 +155,22 @@ const DesktopHeader = () => {
               open ? 'flex-col items-end' : 'hidden'
             }  h-32 w-full p-4  space-y-2 text-gray-100 text-xl font-sans`}
           >
-            <p className="">Projects</p>
-            <p className=""> Technologies</p>
-            <p className="">About</p>
+            <p>
+              <Link to="/" className="">
+                Projects
+              </Link>
+            </p>
+            <p>
+              <Link to="/tech" className="">
+                {' '}
+                Technologies
+              </Link>
+            </p>
+            <p>
+              <Link to="/about" className="">
+                About
+              </Link>
+            </p>
           </div>
         </div>
       </div>

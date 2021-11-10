@@ -8,8 +8,8 @@ export const AboutPage = (props: Props) => {
       <main className="max-w-6xl mx-auto py-8">
         <div className="grid grid-cols-2">
           {/* Left Side */}
-          <div>
-            <text className="text-2xl">I am a Software Engineer. </text>
+          <div className="pl-2 bg-white">
+            <text className=" text-2xl">I am a Software Engineer. </text>
           </div>
 
           {/* Right Side */}
