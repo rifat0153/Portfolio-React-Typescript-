@@ -1,5 +1,8 @@
 import { Github } from 'react-bootstrap-icons';
 import { AppInfo } from '../data/AppData';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 interface Props {
   appInfo: AppInfo;
@@ -8,6 +11,13 @@ interface Props {
 
 const ProjectDetail = ({ appInfo, switchSide }: Props) => {
   console.log(switchSide);
+
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      easing: 'ease-in-out-quart',
+    });
+  }, []);
 
   return (
     <div className="pt-16">
@@ -21,7 +31,10 @@ const ProjectDetail = ({ appInfo, switchSide }: Props) => {
         </div>
 
         {/* Description DIV */}
-        <div className="px-2 py-4 text-gray-300 font-mono">
+        <div
+          data-aos={`${switchSide ? 'fade-right' : 'fade-left'}`}
+          className="px-2 py-4 text-gray-300 font-mono"
+        >
           <Description appInfo={appInfo} />
         </div>
 
@@ -60,7 +73,7 @@ export default ProjectDetail;
 const ShowImages = ({ appInfo }: { appInfo: AppInfo }) => {
   return (
     <>
-      <div className=" mx-auto  py-4">
+      <div data-aos="zoom-in" className=" mx-auto  py-4">
         <img
           className="w-screen md:w-48 border-2 border-gray-400 object-cover object-center   h-full  my-2 rounded-2xl"
           src={appInfo.image1}
@@ -68,7 +81,7 @@ const ShowImages = ({ appInfo }: { appInfo: AppInfo }) => {
         />
       </div>
 
-      <div className="mx-auto  py-4 ">
+      <div data-aos="zoom-in" className="mx-auto  py-4 ">
         <img
           className="w-screen md:w-48 border-2 border-gray-400 object-cover object-center   h-full  my-2 rounded-2xl"
           src={appInfo.image2}
