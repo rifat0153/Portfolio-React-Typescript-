@@ -18,7 +18,7 @@ const HomePage = (props: Props) => {
 
   return (
     <div className=" bg-main-dark p-2 text-gray-200">
-      <div>
+      {/* <div>
         <input
           className="text-black mx-24"
           type="text"
@@ -35,7 +35,7 @@ const HomePage = (props: Props) => {
             dispatch(setCurrentIndex(parseInt(e.target.value)));
           }}
         />
-      </div>
+      </div> */}
       {selected.technologyList.map((item) => (
         <p>{item}</p>
       ))}
