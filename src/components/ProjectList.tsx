@@ -11,16 +11,12 @@ const ProjectList = ({ appInfoList }: Props): JSX.Element => {
       {appInfoList.map((item: AppInfo) => (
         <div key={item.id} className="">
           {item.id % 2 === 0 ? (
-            <div>
-              <div className="max-w-7xl   mx-auto">
-                <ProjectDetail appInfo={item} switchSide={true} />
-              </div>
+            <div className="max-w-7xl   mx-auto">
+              <ProjectDetail appInfo={item} switchSide={true} />
             </div>
           ) : (
-            <div className="bg-main-light ">
-              <div className="max-w-7xl   mx-auto ">
-                <ProjectDetail appInfo={item} switchSide={false} />
-              </div>
+            <div className="max-w-7xl   mx-auto ">
+              <ProjectDetail appInfo={item} switchSide={false} />
             </div>
           )}
         </div>

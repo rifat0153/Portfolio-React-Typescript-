@@ -50,7 +50,10 @@ const ProjectDetail = ({ appInfo, switchSide }: Props) => {
 
       {/* Technogloy LIST */}
       <div className="mt-16">
-        <div className="flex flex-wrap justify-center mx-auto max-w-xl  divide-x divide-gray-300 text-lg sm:text-2xl font-bold  text-transparent  bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+        <div
+          className="flex flex-wrap justify-center mx-auto max-w-xl  divide-x divide-gray-300 text-lg sm:text-2xl
+                     font-bold  text-transparent  bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
+        >
           {appInfo.technologyList.map((item, index) => (
             <div className="px-2 my-2">
               <p key={index}>{item} </p>
@@ -60,9 +63,8 @@ const ProjectDetail = ({ appInfo, switchSide }: Props) => {
       </div>
 
       {/* DIVIDER DIV */}
-
       <div className="flex justify-center w-full">
-        <hr className="my-16 mx-16  border-1 w-full   border-gray-700" />
+        <hr className="my-16  border-1 w-full   border-gray-700" />
       </div>
     </div>
   );
@@ -75,7 +77,7 @@ const ShowImages = ({ appInfo }: { appInfo: AppInfo }) => {
     <>
       <div data-aos="zoom-in" className=" mx-auto  py-4">
         <img
-          className="w-screen md:w-48 border-2 border-gray-400 object-cover object-center   h-full  my-2 rounded-2xl"
+          className="w-screen  346 border-2 border-gray-400 object-cover object-center   h-full  my-2 rounded-2xl"
           src={appInfo.image1}
           alt={appInfo.title}
         />
@@ -83,7 +85,7 @@ const ShowImages = ({ appInfo }: { appInfo: AppInfo }) => {
 
       <div data-aos="zoom-in" className="mx-auto  py-4 ">
         <img
-          className="w-screen md:w-48 border-2 border-gray-400 object-cover object-center   h-full  my-2 rounded-2xl"
+          className="w-screen 346 border-2 border-gray-400 object-cover object-center   h-full  my-2 rounded-2xl"
           src={appInfo.image2}
           alt={appInfo.title}
         />

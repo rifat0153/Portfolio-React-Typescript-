@@ -36,10 +36,10 @@ const HomePage = (props: Props) => {
           }}
         />
       </div> */}
-      {selected.technologyList.map((item) => (
+      {/* {selected.technologyList.map((item) => (
         <p>{item}</p>
-      ))}
-      <div></div>
+      ))} */}
+
       <div className="my-16">
         <Profile />
       </div>
