@@ -1,6 +1,9 @@
-import React, { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+
+import techs from '../data/TechList';
+import { TechContainer } from '../components/TechContainer';
 
 interface Props {}
 
@@ -13,17 +16,12 @@ export const TechnologyPage = (props: Props) => {
   }, []);
 
   return (
-    <div className="justify-center mx-auto max-w-7xl bg-gray-300 grid grid-col-1 text-center">
-      <div className="bg-blue-100 my-8 h-96 min-w-full rounded-lg">1</div>
-      <div className="bg-blue-100 my-8 h-96 min-w-full rounded-lg">2</div>
-      <div
-        data-aos="fade-up"
-        className="bg-blue-100 my-8 h-96 min-w-full rounded-lg"
-      >
-        3
+    <div className="bg-main-light">
+      <div className="mx-auto  grid grid-col-1 max-w-5xl">
+        {techs.map((tech) => (
+          <TechContainer tech={tech} />
+        ))}
       </div>
-      <div className="bg-blue-100 my-8 h-96 min-w-full rounded-lg">4</div>
-      <div className="bg-blue-100 my-8 h-96 min-w-full rounded-lg">5</div>
     </div>
   );
 };
