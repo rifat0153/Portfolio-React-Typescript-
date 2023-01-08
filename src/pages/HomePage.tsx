@@ -18,34 +18,11 @@ const HomePage = (props: Props) => {
 
   return (
     <div className=" bg-main-dark p-2 text-gray-200">
-      {/* <div>
-        <input
-          className="text-black mx-24"
-          type="text"
-          onChange={(e) => {
-            console.log(e.target.value);
-            dispatch(setCurrentTech(e.target.value));
-          }}
-        />
-        <input
-          className="text-black"
-          type="text"
-          onChange={(e) => {
-            console.log(e.target.value);
-            dispatch(setCurrentIndex(parseInt(e.target.value)));
-          }}
-        />
-      </div> */}
-      {/* {selected.technologyList.map((item) => (
-        <p>{item}</p>
-      ))} */}
-
       <div className="my-16">
         <Profile />
       </div>
-      <div>
-        <ProjectList appInfoList={data} />
-      </div>
+
+      <ProjectList appInfoList={data} />
     </div>
   );
 };
@@ -68,7 +45,7 @@ const Profile = () => {
         Product Builder
       </p>
       <p className="py-1 md:py-2 text-center text-md md:text-xl">
-        Flutter Developer
+        Typescript and Dart Developer
       </p>
     </>
   );

@@ -1,6 +1,6 @@
 import React, { ReactElement, useState } from 'react';
 import { Linkedin, Github, Instagram } from 'react-bootstrap-icons';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { animated, useTransition, config } from 'react-spring';
 
 export default function Header(): ReactElement {
@@ -28,7 +28,7 @@ const DesktopHeader = () => {
   };
 
   return (
-    <div className="bg-main-dark ">
+    <div className="bg-main-dark z-50">
       <div className={`min-w-full  ${open ? `py-32` : `py-10`}   opacity-70`}>
         <div className="fixed inset-x-0 top-0 bg-header  ">
           {/* Desktop Nav goes here */}
@@ -43,21 +43,21 @@ const DesktopHeader = () => {
             <div className="flex items-center text-gray-300 text-2xl font-semibold space-x-16">
               <Link
                 to="/"
-                className=" hover:text-appText transform ease-in-out hover:scale-125 duration-300 "
+                className=" hover:text-appText transform ease-in-out  duration-300 "
               >
                 Projects
               </Link>
 
               <Link
                 to="/tech"
-                className=" hover:text-appText transform ease-in-out hover:scale-125 duration-300 "
+                className=" hover:text-appText transform ease-in-out  duration-300 "
               >
                 Technologies
               </Link>
 
               <Link
                 to="/about"
-                className=" hover:text-appText transform ease-in-out hover:scale-125 duration-300 "
+                className=" hover:text-appText transform ease-in-out  duration-300 "
               >
                 About
               </Link>

@@ -25,7 +25,7 @@ const ProjectDetail = ({ appInfo, switchSide }: Props) => {
       <div className="grid md:grid-cols-2">
         {/* Image DIV */}
         <div
-          className={`${switchSide ? 'hidden' : ''} grid grid-cols-2 space-x-2`}
+          className={`${switchSide ? 'hidden' : ''} grid grid-cols-2 space-x-6`}
         >
           <ShowImages appInfo={appInfo} />
         </div>
@@ -75,17 +75,17 @@ export default ProjectDetail;
 const ShowImages = ({ appInfo }: { appInfo: AppInfo }) => {
   return (
     <>
-      <div data-aos="zoom-in" className=" mx-auto  py-4">
+      <div data-aos="zoom-in" className=" mx-auto px-4  py-4">
         <img
-          className="w-screen  346 border-2 border-gray-400 object-cover object-center   h-full  my-2 rounded-2xl"
+          className="w-screen   border-2 border-purple-200 object-cover object-center h-full  my-2 rounded-2xl"
           src={appInfo.image1}
           alt={appInfo.title}
         />
       </div>
 
-      <div data-aos="zoom-in" className="mx-auto  py-4 ">
+      <div data-aos="zoom-in" className="mx-auto py-4 pr-4">
         <img
-          className="w-screen 346 border-2 border-gray-400 object-cover object-center   h-full  my-2 rounded-2xl"
+          className="w-screen  border-2 border-purple-200 object-cover object-center h-full my-2 rounded-2xl"
           src={appInfo.image2}
           alt={appInfo.title}
         />
