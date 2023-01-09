@@ -22,7 +22,7 @@ const HomePage = (props: Props) => {
         <Profile />
       </div>
 
-      <ProjectList appInfoList={data} />
+      <ProjectList projectList={data} />
     </div>
   );
 };

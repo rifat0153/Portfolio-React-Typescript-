@@ -1,11 +1,11 @@
 import { Github } from 'react-bootstrap-icons';
-import { AppInfo } from '../data/AppData';
+import { Project, ProjectLink } from '../data/AppData';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 
 interface Props {
-  appInfo: AppInfo;
+  appInfo: Project;
   switchSide: boolean;
 }
 
@@ -24,11 +24,11 @@ const ProjectDetail = ({ appInfo, switchSide }: Props) => {
       {/* APPINFO GRID */}
       <div className="grid md:grid-cols-2">
         {/* Image DIV */}
-        <div
-          className={`${switchSide ? 'hidden' : ''} grid grid-cols-2 space-x-6`}
-        >
-          <ShowImages appInfo={appInfo} />
-        </div>
+        {!switchSide && (
+          <div className=" grid grid-cols-2 space-x-6 z-[-10]">
+            <ShowImages appInfo={appInfo} />
+          </div>
+        )}
 
         {/* Description DIV */}
         <div
@@ -39,27 +39,23 @@ const ProjectDetail = ({ appInfo, switchSide }: Props) => {
         </div>
 
         {/* Image DIV For Side Switch */}
-        <div
-          className={`${
-            switchSide ? '' : 'hidden'
-          }  grid grid-cols-2 space-x-2`}
-        >
-          <ShowImages appInfo={appInfo} />
-        </div>
+        {switchSide && (
+          <div className="grid grid-cols-2 space-x-2">
+            <ShowImages appInfo={appInfo} />
+          </div>
+        )}
       </div>
 
       {/* Technogloy LIST */}
-      <div className="mt-16">
-        <div
-          className="flex flex-wrap justify-center mx-auto max-w-xl  divide-x divide-gray-300 text-lg sm:text-2xl
+      <div
+        className="mt-16 flex flex-wrap justify-center mx-auto max-w-xl  divide-x divide-gray-300 text-lg sm:text-2xl
                      font-bold  text-transparent  bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
-        >
-          {appInfo.technologyList.map((item, index) => (
-            <div className="px-2 my-2">
-              <p key={index}>{item} </p>
-            </div>
-          ))}
-        </div>
+      >
+        {appInfo.technologyList.map((item, index) => (
+          <div className="px-2 my-2">
+            <p key={index}>{item} </p>
+          </div>
+        ))}
       </div>
 
       {/* DIVIDER DIV */}
@@ -72,10 +68,10 @@ const ProjectDetail = ({ appInfo, switchSide }: Props) => {
 
 export default ProjectDetail;
 
-const ShowImages = ({ appInfo }: { appInfo: AppInfo }) => {
+const ShowImages = ({ appInfo }: { appInfo: Project }) => {
   return (
     <>
-      <div data-aos="zoom-in" className=" mx-auto px-4  py-4">
+      <div data-aos="zoom-in" className=" mx-auto px-4  py-4 z-10">
         <img
           className="w-screen   border-2 border-purple-200 object-cover object-center h-full  my-2 rounded-2xl"
           src={appInfo.image1}
@@ -83,7 +79,7 @@ const ShowImages = ({ appInfo }: { appInfo: AppInfo }) => {
         />
       </div>
 
-      <div data-aos="zoom-in" className="mx-auto py-4 pr-4">
+      <div data-aos="zoom-in" className="mx-auto py-4 pr-4 z-10">
         <img
           className="w-screen  border-2 border-purple-200 object-cover object-center h-full my-2 rounded-2xl"
           src={appInfo.image2}
@@ -94,7 +90,7 @@ const ShowImages = ({ appInfo }: { appInfo: AppInfo }) => {
   );
 };
 
-const Description = ({ appInfo }: { appInfo: AppInfo }) => {
+const Description = ({ appInfo }: { appInfo: Project }) => {
   return (
     <div className="">
       <p className=" font-bold   text-3xl sm:text-4xl text-appText">
@@ -103,22 +99,35 @@ const Description = ({ appInfo }: { appInfo: AppInfo }) => {
       <p className="mt-4 text-gray-400 font-semibold  text-lg sm:text-xl">
         {appInfo.introduction}
       </p>
-      <p className="mt-8 text-3xl sm:text-4xl text-appText">Technology</p>
-      <p className="mt-4 text-lg  sm:text-xl text-gray-400">
-        {appInfo.technology}
-      </p>
+
+      {appInfo.description && (
+        <>
+          <p className="mt-8 text-3xl sm:text-4xl text-appText">Technology</p>
+          <p className="mt-4 text-lg  sm:text-xl text-gray-400">
+            {appInfo.description}
+          </p>
+        </>
+      )}
 
       {/* LINK DIV */}
-      <div className=" flex mt-16 justify-center items-center">
-        <div className="flex   max-w-lg justify-center items-center text-xl font-sans font-extralight text-green-300">
-          <p className="flex border-r-2 border-gray-400 bg-indigo-800 hover:bg-indigo-900 px-8 py-4 rounded-l-xl  ">
-            CODE
-          </p>
-          <div className="flex bg-indigo-800 hover:bg-indigo-900 px-8 py-4 rounded-r-xl ">
-            <Github className="h-7 w-7" />
-          </div>
+      {appInfo.links?.map((link, index) => (
+        <Link key={index} {...link} />
+      ))}
+    </div>
+  );
+};
+
+function Link(link: ProjectLink) {
+  return (
+    <div className=" flex mt-16 justify-center items-center">
+      <div className="flex   max-w-lg justify-center items-center text-xl font-sans font-extralight text-green-300">
+        <p className="flex border-r-2 border-gray-400 bg-indigo-800 hover:bg-indigo-900 px-8 py-4 rounded-l-xl  ">
+          {link.title}
+        </p>
+        <div className="flex bg-indigo-800 hover:bg-indigo-900 px-8 py-4 rounded-r-xl ">
+          <Github className="h-7 w-7" />
         </div>
       </div>
     </div>
   );
-};
+}

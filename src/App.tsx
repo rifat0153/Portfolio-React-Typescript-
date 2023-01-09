@@ -3,17 +3,16 @@ import Header from './components/Header';
 import { AboutPage } from './pages/AboutPage';
 import HomePage from './pages/HomePage';
 import { TechnologyPage } from './pages/TechnologyPage';
-export interface IAppProps {}
 
-export const App = (props: IAppProps) => {
+export const App = () => {
   return (
     <div className="font-sans font-normal">
       <Router>
-        <header>
+        <div className="relative z-50">
           <Header />
-        </header>
+        </div>
 
-        <div>
+        <div className="relative z-0">
           <Switch>
             <Route exact path="/">
               <HomePage />

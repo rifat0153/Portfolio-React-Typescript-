@@ -1,17 +1,17 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import appData, { AppInfo } from '../data/AppData';
+import projectList, { Project } from '../data/AppData';
 import { RootState } from '../store/store';
 
 interface ProjectState {
-  projectList: AppInfo[];
-  selectedProject: AppInfo;
+  projectList: Project[];
+  selectedProject: Project;
   searchString: string;
   currentTech: string;
 }
 
 const initialState: ProjectState = {
-  projectList: appData,
-  selectedProject: appData[0],
+  projectList: projectList,
+  selectedProject: projectList[0],
   searchString: '',
   currentTech: '',
 };

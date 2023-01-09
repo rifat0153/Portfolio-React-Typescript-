@@ -1,14 +1,14 @@
-import { AppInfo } from '../data/AppData';
+import { Project } from '../data/AppData';
 import ProjectDetail from './ProjectDetail';
 
 interface Props {
-  appInfoList: AppInfo[];
+  projectList: Project[];
 }
 
-const ProjectList = ({ appInfoList }: Props): JSX.Element => {
+const ProjectList = ({ projectList }: Props): JSX.Element => {
   return (
     <div className="max-w-5xl mx-auto">
-      {appInfoList.map((item) => (
+      {projectList.map((item) => (
         <div key={item.id} className="">
           {item.id % 2 === 0 ? (
             <ProjectDetail appInfo={item} switchSide={true} />

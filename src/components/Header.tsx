@@ -28,7 +28,7 @@ const DesktopHeader = () => {
   };
 
   return (
-    <div className="bg-main-dark z-50">
+    <div className="bg-main-dark">
       <div className={`min-w-full  ${open ? `py-32` : `py-10`}   opacity-70`}>
         <div className="fixed inset-x-0 top-0 bg-header  ">
           {/* Desktop Nav goes here */}
