@@ -30,11 +30,6 @@ export const projectListSlice = createSlice({
         console.log(state.projectList[index].technologyList);
       }
 
-      // if (action.payload.length > 0) {
-      //   state.projectList = state.projectList.filter((item) => true);
-      // } else {
-      //   state.projectList = appData;
-      // }
     },
   },
 });

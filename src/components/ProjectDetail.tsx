@@ -6,11 +6,11 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 
 interface Props {
-  appInfo: Project;
+  project: Project;
   switchSide: boolean;
 }
 
-const ProjectDetail = ({ appInfo, switchSide }: Props) => {
+const ProjectDetail = ({ project, switchSide }: Props) => {
   useEffect(() => {
     Aos.init({
       duration: 1000,
@@ -24,23 +24,23 @@ const ProjectDetail = ({ appInfo, switchSide }: Props) => {
       <div className="grid md:grid-cols-2">
         {/* Image DIV */}
         {!switchSide && (
-          <div className=" grid grid-cols-2 space-x-6 z-[-10]">
-            <AppImages appInfo={appInfo} />
+          <div className=" grid grid-cols-2 space-x-6 ">
+            <AppImages appInfo={project} />
           </div>
         )}
 
         {/* Description DIV */}
         <div
-          data-aos={`${switchSide ? 'fade-right' : 'fade-left'}`}
+          data-aos={switchSide ? 'fade-right' : 'fade-left'}
           className="px-2 py-4 text-gray-300 font-mono"
         >
-          <Description appInfo={appInfo} />
+          <Description appInfo={project} />
         </div>
 
         {/* Image DIV For Side Switch */}
         {switchSide && (
           <div className="grid grid-cols-2 space-x-2">
-            <AppImages appInfo={appInfo} />
+            <AppImages appInfo={project} />
           </div>
         )}
       </div>
@@ -50,7 +50,7 @@ const ProjectDetail = ({ appInfo, switchSide }: Props) => {
         className="mt-16 flex flex-wrap justify-center mx-auto max-w-xl  divide-x divide-gray-300 text-lg sm:text-2xl
                      font-bold  text-transparent  bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
       >
-        {appInfo.technologyList.map((item, index) => (
+        {project.technologyList.map((item, index) => (
           <div key={index} className="px-2 my-2">
             <p>{item} </p>
           </div>
@@ -58,9 +58,7 @@ const ProjectDetail = ({ appInfo, switchSide }: Props) => {
       </div>
 
       {/* DIVIDER DIV */}
-      <div className="flex justify-center w-full">
-        <hr className="my-16  border-1 w-full   border-gray-700" />
-      </div>
+      <hr className="my-16  border-1 w-full   border-gray-700" />
     </div>
   );
 };

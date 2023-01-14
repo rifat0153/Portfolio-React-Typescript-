@@ -11,9 +11,9 @@ const ProjectList = ({ projectList }: Props): JSX.Element => {
       {projectList.map((item) => (
         <div key={item.id} className="">
           {item.id % 2 === 0 ? (
-            <ProjectDetail appInfo={item} switchSide={true} />
+            <ProjectDetail project={item} switchSide={true} />
           ) : (
-            <ProjectDetail appInfo={item} switchSide={false} />
+            <ProjectDetail project={item} switchSide={false} />
           )}
         </div>
       ))}

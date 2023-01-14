@@ -1,12 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import ProjectList from '../components/ProjectList';
-import {
-  selectCurrentProject,
-  selectProjectList,
-  setCurrentTech,
-  setCurrentIndex,
-} from '../slices/projectSlice';
-import React from 'react';
+import { selectProjectList } from '../slices/projectSlice';
 import Profile from '../components/Profile';
 
 const HomePage = () => {
@@ -24,4 +18,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-

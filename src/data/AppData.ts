@@ -75,7 +75,7 @@ const projectList: Project[] = [
       'An android application for sharing meal and other necessary things',
     description:
       'Aalokito is build with Flutter, Nodejs and MongoDB with geo-location based system. Firebase for realtime in app notifications. Cloud funtions hosts the node express server and handles the api call from Flutter app.',
-    technologyList: ['Flutter', 'Firebase', 'MongoDB', 'NodeJs', 'Flutter'],
+    technologyList: ['Flutter', 'Firebase', 'MongoDB', 'NodeJs'],
   },
 ];
 
