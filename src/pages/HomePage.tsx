@@ -6,15 +6,13 @@ import {
   setCurrentTech,
   setCurrentIndex,
 } from '../slices/projectSlice';
-import profileImg from '../static/images/profile.jpg';
+
+// import profileImg from '../static/images/profile.jpg';
 
 interface Props {}
 
 const HomePage = (props: Props) => {
   const data = useSelector(selectProjectList);
-  const selected = useSelector(selectCurrentProject);
-
-  const dispatch = useDispatch();
 
   return (
     <div className=" bg-main-dark p-2 text-gray-200">
@@ -32,11 +30,11 @@ export default HomePage;
 const Profile = () => {
   return (
     <>
-      <img
+      {/* <img
         className="w-44 h-44 mt-8 shadow-lg mx-auto rounded-full object-cover object-top"
         src={profileImg}
         alt="a"
-      />
+      /> */}
 
       <p className="mt-8 text-center font-medium text-2xl md:text-5xl">
         Mahbubur Rahman

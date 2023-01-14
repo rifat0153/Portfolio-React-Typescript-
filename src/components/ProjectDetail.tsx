@@ -53,8 +53,8 @@ const ProjectDetail = ({ appInfo, switchSide }: Props) => {
                      font-bold  text-transparent  bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
       >
         {appInfo.technologyList.map((item, index) => (
-          <div className="px-2 my-2">
-            <p key={index}>{item} </p>
+          <div key={index} className="px-2 my-2">
+            <p>{item} </p>
           </div>
         ))}
       </div>

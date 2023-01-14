@@ -40,8 +40,11 @@ export const TechContainer = ({ tech }: Props) => {
 
       {/* Chips Row */}
       <div className="flex flex-wrap">
-        {tech.chips.map((chip) => (
-          <div className="bg-blue-500 max-w-max rounded-3xl px-4 py-2 mx-3 my-2 font-semibold shadow-md">
+        {tech.chips.map((chip, key) => (
+          <div
+            key={key}
+            className="bg-blue-500 max-w-max rounded-3xl px-4 py-2 mx-3 my-2 font-semibold shadow-md"
+          >
             <p>{chip}</p>
           </div>
         ))}

@@ -18,8 +18,8 @@ export const TechnologyPage = (props: Props) => {
   return (
     <div className="bg-main-light">
       <div className="mx-auto  grid grid-col-1 max-w-5xl">
-        {techs.map((tech) => (
-          <TechContainer tech={tech} />
+        {techs.map((tech, key) => (
+          <TechContainer tech={tech} key={key} />
         ))}
       </div>
     </div>
