@@ -1,8 +1,9 @@
+import { useEffect } from 'react';
 import { Github } from 'react-bootstrap-icons';
 import { Project, ProjectLink } from '../data/AppData';
 import Aos from 'aos';
+
 import 'aos/dist/aos.css';
-import { useEffect } from 'react';
 
 interface Props {
   appInfo: Project;
