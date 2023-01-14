@@ -11,8 +11,6 @@ interface Props {
 }
 
 const ProjectDetail = ({ appInfo, switchSide }: Props) => {
-  console.log(switchSide);
-
   useEffect(() => {
     Aos.init({
       duration: 1000,
@@ -27,7 +25,7 @@ const ProjectDetail = ({ appInfo, switchSide }: Props) => {
         {/* Image DIV */}
         {!switchSide && (
           <div className=" grid grid-cols-2 space-x-6 z-[-10]">
-            <ShowImages appInfo={appInfo} />
+            <AppImages appInfo={appInfo} />
           </div>
         )}
 
@@ -42,7 +40,7 @@ const ProjectDetail = ({ appInfo, switchSide }: Props) => {
         {/* Image DIV For Side Switch */}
         {switchSide && (
           <div className="grid grid-cols-2 space-x-2">
-            <ShowImages appInfo={appInfo} />
+            <AppImages appInfo={appInfo} />
           </div>
         )}
       </div>
@@ -69,7 +67,7 @@ const ProjectDetail = ({ appInfo, switchSide }: Props) => {
 
 export default ProjectDetail;
 
-const ShowImages = ({ appInfo }: { appInfo: Project }) => {
+const AppImages = ({ appInfo }: { appInfo: Project }) => {
   return (
     <>
       <div data-aos="zoom-in" className=" mx-auto px-4  py-4 z-10">
