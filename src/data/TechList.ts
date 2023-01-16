@@ -1,7 +1,3 @@
-import flutterImage from '../static/images/flutter.png';
-import reactImage from '../static/images/react.png';
-import nodeImage from '../static/images/node.png';
-
 export interface Tech {
   id: number;
   image: string;
@@ -14,7 +10,7 @@ export interface Tech {
 const techList: Tech[] = [
   {
     id: 1,
-    image: flutterImage,
+    image: '',
     name: 'Flutter',
     skillPoint: 8.5,
     chips: ['Http', 'Riverpod'],
@@ -22,7 +18,7 @@ const techList: Tech[] = [
   },
   {
     id: 2,
-    image: nodeImage,
+    image: '',
     name: 'NodeJs',
     skillPoint: 8,
     chips: ['Express', 'RestAPI', 'MongoDB', 'Firebase Admin SDK'],
@@ -30,7 +26,7 @@ const techList: Tech[] = [
   },
   {
     id: 3,
-    image: reactImage,
+    image: '',
     name: 'ReactJs',
     skillPoint: 7,
     chips: ['Redux Thunk', 'Typescript'],
@@ -38,7 +34,7 @@ const techList: Tech[] = [
   },
   {
     id: 4,
-    image: flutterImage,
+    image: '',
     name: 'Flutter',
     skillPoint: 8.5,
     chips: ['Http', 'Riverpod'],
@@ -46,7 +42,7 @@ const techList: Tech[] = [
   },
   {
     id: 5,
-    image: nodeImage,
+    image: '',
     name: 'NodeJs',
     skillPoint: 8,
     chips: ['Express', 'RestAPI', 'MongoDB', 'Firebase Admin SDK'],
@@ -54,7 +50,7 @@ const techList: Tech[] = [
   },
   {
     id: 6,
-    image: reactImage,
+    image: '',
     name: 'ReactJs',
     skillPoint: 7,
     chips: ['Redux Thunk', 'Typescript'],

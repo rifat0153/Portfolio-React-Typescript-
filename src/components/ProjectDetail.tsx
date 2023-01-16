@@ -1,9 +1,11 @@
 import { useEffect } from 'react';
 import { Github } from 'react-bootstrap-icons';
-import { Project, ProjectLink } from '../data/AppData';
+import { FaAppStore } from 'react-icons/fa';
+import { Project, ProjectLink } from '../data/appData';
 import Aos from 'aos';
 
 import 'aos/dist/aos.css';
+import ProjectLinkList from './ProjectLinkList';
 
 interface Props {
   project: Project;
@@ -89,42 +91,28 @@ const AppImages = ({ appInfo }: { appInfo: Project }) => {
 
 const Description = ({ appInfo }: { appInfo: Project }) => {
   return (
-    <div className="">
-      <p className=" font-bold   text-3xl sm:text-4xl text-appText">
-        {appInfo.title}
-      </p>
-      <p className="mt-4 text-gray-400 font-semibold  text-lg sm:text-xl">
-        {appInfo.introduction}
-      </p>
-
-      {appInfo.description && (
-        <>
-          <p className="mt-8 text-3xl sm:text-4xl text-appText">Technology</p>
-          <p className="mt-4 text-lg  sm:text-xl text-gray-400">
-            {appInfo.description}
-          </p>
-        </>
-      )}
-
-      {/* LINK DIV */}
-      {appInfo.links?.map((link, index) => (
-        <Link key={index} {...link} />
-      ))}
-    </div>
-  );
-};
-
-function Link(link: ProjectLink) {
-  return (
-    <div className=" flex mt-16 justify-center items-center">
-      <div className="flex   max-w-lg justify-center items-center text-xl font-sans font-extralight text-green-300">
-        <p className="flex border-r-2 border-gray-400 bg-indigo-800 hover:bg-indigo-900 px-8 py-4 rounded-l-xl  ">
-          {link.title}
+    <div className="flex flex-col justify-between h-full w-full">
+      <div>
+        <p className=" font-bold   text-3xl sm:text-4xl text-appText">
+          {appInfo.title}
         </p>
-        <div className="flex bg-indigo-800 hover:bg-indigo-900 px-8 py-4 rounded-r-xl ">
-          <Github className="h-7 w-7" />
-        </div>
+        <p className="mt-4 text-gray-400 font-semibold  text-lg sm:text-xl">
+          {appInfo.introduction}
+        </p>
+
+        {appInfo.description && (
+          <>
+            <p className="mt-8 text-3xl sm:text-4xl text-appText">Technology</p>
+            <p className="mt-4 text-lg  sm:text-xl text-gray-400">
+              {appInfo.description}
+            </p>
+          </>
+        )}
+      </div>
+
+      <div className="mt-auto">
+        <ProjectLinkList links={appInfo.links ?? []} />
       </div>
     </div>
   );
-}
+};

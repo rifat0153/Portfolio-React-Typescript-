@@ -9,11 +9,15 @@ export interface Project {
   links?: ProjectLink[];
 }
 
-export interface ProjectLink {
+export const IconList = ['playStore', 'appStore', 'github'] as const;
+
+export type ProjectIconType = typeof IconList[number];
+
+export type ProjectLink = {
   title: string;
-  icon: string;
+  icon: ProjectIconType;
   url: string;
-}
+};
 
 const projectList: Project[] = [
   {
@@ -29,12 +33,12 @@ const projectList: Project[] = [
     technologyList: ['Flutter'],
     links: [
       {
-        icon: 'fab fa-android',
+        icon: 'playStore',
         title: 'PLAY STORE',
         url: 'https://play.google.com/store/apps/details?id=co.uk.wotspot.indigo.ios.stage',
       },
       {
-        icon: 'fab fa-apple',
+        icon: 'appStore',
         title: 'APP STORE',
         url: 'https://apps.apple.com/gb/app/spotlas/id1464125251',
       },
@@ -53,12 +57,12 @@ const projectList: Project[] = [
     technologyList: ['Flutter', 'Riverpod', 'Text to Speech'],
     links: [
       {
-        icon: 'fab fa-android',
+        icon: 'playStore',
         title: 'PLAY STORE',
         url: 'https://play.google.com/store/apps/details?id=com.mcc.thedailystar&hl=en_US&gl=US',
       },
       {
-        icon: 'fab fa-apple',
+        icon: 'appStore',
         title: 'APP STORE',
         url: 'https://apps.apple.com/us/app/the-daily-star/id589009555',
       },

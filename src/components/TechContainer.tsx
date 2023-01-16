@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tech } from '../data/TechList';
+import { Tech } from '../data/techList';
 
 import { BsFillStarFill } from 'react-icons/bs';
 

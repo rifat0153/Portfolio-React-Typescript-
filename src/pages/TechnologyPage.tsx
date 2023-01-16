@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 
-import techs from '../data/TechList';
+import techs from '../data/techList';
 import { TechContainer } from '../components/TechContainer';
 
 interface Props {}

@@ -1,4 +1,4 @@
-import { Project } from '../data/AppData';
+import { Project } from '../data/appData';
 import ProjectDetail from './ProjectDetail';
 
 interface Props {
